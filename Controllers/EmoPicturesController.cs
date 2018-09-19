@@ -33,6 +33,8 @@ namespace CognitiveServicesAzure.Controllers
             {
                 return HttpNotFound();
             }
+            var emoFaces = db.EmoFaces.Include(e => e.Picture);
+            ViewBag.lista = emoFaces.ToList();
             return View(emoPicture);
         }
 
